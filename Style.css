@@ -1,0 +1,377 @@
+/* Grundlayout */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #f5f7fb;
+    color: #1b2430;
+    line-height: 1.6;
+}
+
+/* Farben */
+:root {
+    --primary: #0b2c5f;      /* dunkles Blau */
+    --primary-light: #1f4b8f;
+    --accent: #ffb347;       /* warmes Akzent-Orange */
+    --accent-soft: #ffe1b8;
+    --bg-light: #ffffff;
+    --border-soft: #dde3f0;
+}
+
+/* Header & Navigation */
+header {
+    background: var(--primary);
+    color: #ffffff;
+    padding: 1rem 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 0.03em;
+}
+
+nav a {
+    color: #dbe6ff;
+    text-decoration: none;
+    margin-left: 1.2rem;
+    font-size: 0.95rem;
+    padding-bottom: 0.2rem;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+nav a:hover {
+    color: #ffffff;
+    border-color: var(--accent);
+}
+
+nav a.active {
+    color: #ffffff;
+    border-color: var(--accent);
+}
+
+/* Hauptbereiche */
+main {
+    padding: 2.5rem 8% 3rem;
+}
+
+.page-header {
+    margin-bottom: 2rem;
+}
+
+.page-header h1 {
+    font-size: 1.9rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.page-header p {
+    max-width: 700px;
+}
+
+/* Startseite Hero */
+.hero {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.hero-text h1 {
+    font-size: 2.2rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.hero-text p {
+    max-width: 600px;
+    margin-bottom: 1.5rem;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: var(--accent);
+    color: #3b2a10;
+    padding: 0.7rem 1.4rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.16);
+    background: #ffbf63;
+}
+
+/* Hero Grafik */
+.hero-graphic {
+    display: grid;
+    grid-template-columns: repeat(2, 120px);
+    grid-template-rows: repeat(2, 120px);
+    gap: 1rem;
+    justify-content: center;
+}
+
+.shape-card {
+    background: var(--bg-light);
+    border-radius: 16px;
+    border: 1px solid var(--border-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(11,44,95,0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.shape-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    background: radial-gradient(circle at top left, rgba(255,179,71,0.25), transparent 60%);
+    transition: opacity 0.2s ease;
+}
+
+.shape-card:hover::after {
+    opacity: 1;
+}
+
+/* Formen in Hero */
+.shape-card.square {
+    background-image: linear-gradient(135deg, #1f4b8f 0%, #0b2c5f 100%);
+}
+
+.shape-card.rectangle {
+    background-image: linear-gradient(135deg, #0b2c5f 0%, #1f4b8f 100%);
+}
+
+.shape-card.circle {
+    background-image: radial-gradient(circle, #1f4b8f 0%, #0b2c5f 70%);
+}
+
+.shape-card.triangle {
+    background-image: linear-gradient(135deg, #0b2c5f 0%, #1f4b8f 100%);
+}
+
+/* Level-Karten */
+.levels {
+    margin-bottom: 3rem;
+}
+
+.levels h2 {
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5rem;
+}
+
+.info-card {
+    background: var(--bg-light);
+    border-radius: 14px;
+    padding: 1.2rem 1.3rem;
+    border: 1px solid var(--border-soft);
+    box-shadow: 0 4px 10px rgba(11,44,95,0.06);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+}
+
+.info-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(11,44,95,0.12);
+    border-color: var(--accent);
+}
+
+.info-card h3 {
+    margin-bottom: 0.4rem;
+    color: var(--primary);
+}
+
+.info-card p {
+    font-size: 0.95rem;
+}
+
+.tag {
+    display: inline-block;
+    margin-top: 0.6rem;
+    font-size: 0.8rem;
+    background: var(--accent-soft);
+    color: #5a3b10;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+}
+
+/* Warum-Mathe-Abschnitt */
+.why-math h2 {
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.flex-two {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.highlight-box {
+    background: #e9f0ff;
+    border-radius: 14px;
+    padding: 1.2rem 1.3rem;
+    border: 1px solid #c7d4ff;
+}
+
+.highlight-box h3 {
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+/* Inhaltliche Abschnitte */
+.content-section {
+    margin-bottom: 2.5rem;
+}
+
+.content-section h2 {
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+/* Formen-Visuals auf Unterseiten */
+.shape-info-card {
+    background: var(--bg-light);
+    border-radius: 14px;
+    padding: 1.2rem 1.3rem;
+    border: 1px solid var(--border-soft);
+    box-shadow: 0 4px 10px rgba(11,44,95,0.06);
+}
+
+.shape-visual {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 0.8rem;
+    position: relative;
+}
+
+/* Quadrat */
+.shape-visual.square {
+    background: var(--primary-light);
+    border-radius: 8px;
+}
+
+/* Rechteck */
+.shape-visual.rectangle {
+    background: var(--primary-light);
+    border-radius: 8px;
+    width: 110px;
+}
+
+/* Kreis */
+.shape-visual.circle {
+    background: var(--primary-light);
+    border-radius: 50%;
+}
+
+/* Dreieck (CSS) */
+.shape-visual.triangle {
+    width: 0;
+    height: 0;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-bottom: 80px solid var(--primary-light);
+}
+
+/* Checklisten */
+.checklist {
+    list-style: none;
+}
+
+.checklist li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0.4rem;
+}
+
+.checklist li span {
+    display: inline-block;
+    width: 1.4rem;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* Übungen */
+.exercise {
+    background: var(--bg-light);
+    border-radius: 14px;
+    padding: 1.1rem 1.2rem;
+    border: 1px solid var(--border-soft);
+    margin-bottom: 1rem;
+}
+
+.exercise h3 {
+    margin-bottom: 0.3rem;
+    color: var(--primary);
+}
+
+.exercise details {
+    margin-top: 0.4rem;
+}
+
+.exercise summary {
+    cursor: pointer;
+    color: var(--primary-light);
+}
+
+/* Footer */
+footer {
+    background: #0b2c5f;
+    color: #dbe6ff;
+    text-align: center;
+    padding: 1rem 8%;
+    font-size: 0.85rem;
+    margin-top: 2rem;
+}
+
+/* Responsives Design */
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-graphic {
+        order: -1;
+        margin-bottom: 1rem;
+    }
+
+    .flex-two {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+    }
+
+    nav a {
+        margin-left: 0.6rem;
+        margin-right: 0.6rem;
+    }
+}
