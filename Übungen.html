@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Übungen – Teste dein Wissen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="logo">Geometrie verstehen</div>
+    <nav>
+        <a href="index.html">Start</a>
+        <a href="einsteiger.html">Einsteiger</a>
+        <a href="fortgeschritten.html">Fortgeschritten</a>
+        <a href="experten.html">Experten</a>
+        <a href="uebungen.html" class="active">Übungen</a>
+    </nav>
+</header>
+
+<main>
+    <section class="page-header">
+        <h1>Übungen – Mathe kann Spaß machen</h1>
+        <p>Hier kannst du dein Wissen zu Flächen und Formen testen. 
+           Die Lösungen sind als „aufklappbare“ Hinweise gestaltet (nur mit CSS).</p>
+    </section>
+
+    <section class="content-section">
+        <h2>1. Einsteiger-Aufgaben</h2>
+        <div class="exercise">
+            <h3>Aufgabe 1: Rechteck</h3>
+            <p>Ein Rechteck hat die Seitenlängen 6 cm und 4 cm. 
+               Berechne die Fläche.</p>
+            <details>
+                <summary>Lösung anzeigen</summary>
+                <p>A = a · b = 6 cm · 4 cm = 24 cm².</p>
+            </details>
+        </div>
+
+        <div class="exercise">
+            <h3>Aufgabe 2: Quadrat</h3>
+            <p>Ein Quadrat hat die Seitenlänge 5 cm. 
+               Berechne die Fläche.</p>
+            <details>
+                <summary>Lösung anzeigen</summary>
+                <p>A = a² = 5 cm · 5 cm = 25 cm².</p>
+            </details>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <h2>2. Fortgeschritten-Aufgaben</h2>
+        <div class="exercise">
+            <h3>Aufgabe 3: Kreis</h3>
+            <p>Ein Kreis hat den Radius 4 cm. 
+               Berechne die Fläche (mit π ≈ 3,14).</p>
+            <details>
+                <summary>Lösung anzeigen</summary>
+                <p>A = π · r² ≈ 3,14 · 16 = 50,24 cm².</p>
+            </details>
+        </div>
+
+        <div class="exercise">
+            <h3>Aufgabe 4: Zusammengesetzte Figur</h3>
+            <p>Eine Figur besteht aus einem Rechteck (5 cm × 3 cm) 
+               und einem darüber liegenden Halbkreis mit Radius 2,5 cm. 
+               Berechne die Gesamtfläche (π ≈ 3,14).</p>
+            <details>
+                <summary>Lösung anzeigen (Idee)</summary>
+                <p>1. Rechteck: A₁ = 5 · 3 = 15 cm².<br>
+                   2. Halbkreis: A₂ = (π · r²) / 2 ≈ (3,14 · 6,25) / 2 ≈ 9,81 cm².<br>
+                   3. Gesamt: A ≈ 15 + 9,81 = 24,81 cm².</p>
+            </details>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <h2>3. Experten-Aufgaben</h2>
+        <div class="exercise">
+            <h3>Aufgabe 5: Umkehraufgabe Rechteck</h3>
+            <p>Die Fläche eines Rechtecks beträgt 48 cm². 
+               Eine Seite ist 6 cm lang. 
+               Bestimme die andere Seite.</p>
+            <details>
+                <summary>Lösung anzeigen</summary>
+                <p>A = a · b → 48 = 6 · b → b = 48 / 6 = 8 cm.</p>
+            </details>
+        </div>
+
+        <div class="exercise">
+            <h3>Aufgabe 6: Umkehraufgabe Kreis</h3>
+            <p>Die Fläche eines Kreises beträgt 78,5 cm². 
+               Bestimme näherungsweise den Radius (π ≈ 3,14).</p>
+            <details>
+                <summary>Lösung anzeigen (Rechnung)</summary>
+                <p>A = π · r² → r² = A / π ≈ 78,5 / 3,14 = 25 → r = √25 = 5 cm.</p>
+            </details>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>© 2026 Geometrie verstehen – Übungen</p>
+</footer>
+</body>
+</html>
