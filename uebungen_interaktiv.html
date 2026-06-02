@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Interaktive Übungen – Geometrie</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .exercise-box {
+            background: #ffffff;
+            border: 1px solid #dde3f0;
+            border-radius: 14px;
+            padding: 1.2rem 1.4rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 10px rgba(11,44,95,0.06);
+        }
+
+        .exercise-box h3 {
+            color: var(--primary);
+            margin-bottom: 0.4rem;
+        }
+
+        .input-row {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-top: 0.6rem;
+        }
+
+        input[type="number"] {
+            width: 100px;
+            padding: 0.4rem;
+            border: 1px solid #c7d4ff;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        .check-btn {
+            margin-top: 0.6rem;
+            background: var(--accent);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .result {
+            margin-top: 0.6rem;
+            font-weight: 600;
+        }
+
+        .correct {
+            color: #0a8a25;
+        }
+
+        .wrong {
+            color: #b80000;
+        }
+    </style>
+</head>
+
+<body>
+<header>
+    <div class="logo">Geometrie verstehen</div>
+    <nav>
+        <a href="index.html">Start</a>
+        <a href="einsteiger.html">Einsteiger</a>
+        <a href="fortgeschritten.html">Fortgeschritten</a>
+        <a href="experten.html">Experten</a>
+        <a href="uebungen.html">Übungen</a>
+        <a href="uebungen_interaktiv.html" class="active">Interaktiv</a>
+    </nav>
+</header>
+
+<main>
+    <section class="page-header">
+        <h1>Interaktive Übungen</h1>
+        <p>Gib nur die Zahl ein – die Einheit steht schon da.</p>
+    </section>
+
+    <!-- Aufgabe 1 -->
+    <div class="exercise-box">
+        <h3>Aufgabe 1: Fläche eines Rechtecks</h3>
+        <p>Ein Rechteck hat die Seitenlängen 6 cm und 4 cm. Berechne die Fläche.</p>
+
+        <div class="input-row">
+            <input id="a1" type="number" placeholder="Zahl">
+            <span>cm²</span>
+        </div>
+
+        <button class="check-btn" onclick="check1()">Überprüfen</button>
+        <div id="r1" class="result"></div>
+    </div>
+
+    <!-- Aufgabe 2 -->
+    <div class="exercise-box">
+        <h3>Aufgabe 2: Quadrat</h3>
+        <p>Ein Quadrat hat die Seitenlänge 5 cm. Berechne die Fläche.</p>
+
+        <div class="input-row">
+            <input id="a2" type="number" placeholder="Zahl">
+            <span>cm²</span>
+        </div>
+
+        <button class="check-btn" onclick="check2()">Überprüfen</button>
+        <div id="r2" class="result"></div>
+    </div>
+
+    <!-- Aufgabe 3 -->
+    <div class="exercise-box">
+        <h3>Aufgabe 3: Kreis</h3>
+        <p>Ein Kreis hat den Radius 4 cm. Berechne die Fläche (π ≈ 3,14).</p>
+
+        <div class="input-row">
+            <input id="a3" type="number" placeholder="Zahl">
+            <span>cm²</span>
+        </div>
+
+        <button class="check-btn" onclick="check3()">Überprüfen</button>
+        <div id="r3" class="result"></div>
+    </div>
+</main>
+
+<script>
+    function check1() {
+        const val = document.getElementById("a1").value;
+        const result = document.getElementById("r1");
+        if (val == 24) {
+            result.textContent = "Richtig!";
+            result.className = "result correct";
+        } else {
+            result.textContent = "Leider falsch – richtige Lösung: 24";
+            result.className = "result wrong";
+        }
+    }
+
+    function check2() {
+        const val = document.getElementById("a2").value;
+        const result = document.getElementById("r2");
+        if (val == 25) {
+            result.textContent = "Richtig!";
+            result.className = "result correct";
+        } else {
+            result.textContent = "Leider falsch – richtige Lösung: 25";
+            result.className = "result wrong";
+        }
+    }
+
+    function check3() {
+        const val = document.getElementById("a3").value;
+        const result = document.getElementById("r3");
+        if (val == 50.24) {
+            result.textContent = "Richtig!";
+            result.className = "result correct";
+        } else {
+            result.textContent = "Leider falsch – richtige Lösung: 50.24";
+            result.className = "result wrong";
+        }
+    }
+</script>
+
+<footer>
+    <p>© 2026 Geometrie verstehen – Interaktive Übungen</p>
+</footer>
+
+</body>
+</html>
